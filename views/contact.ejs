@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./parcials/head.ejs') %>
+
+<body>
+    <%- include('./parcials/nav.ejs') %>
+    
+    
+   <div class="contact-us">
+    <form action="/contact us" method="POST">
+        <label for="Name">Name</label>
+        <input type="text" id="title" name="title" required>
+        <label for="Email">Your Email</label>
+        <input type="text" id="email" name="email" required>
+        <label for="body">Cell Number</label>
+        <input type="body" id="body" name="body" required>
+        <br>
+        <br>
+        <h3>Suggestions/Requests</h3>
+
+        <br>
+
+        <textarea id="body" name="body" required></textarea>
+        <br>
+        <br>
+        <br>
+        <button>Submit</button>
+        </form>
+    
+</div>
+
+     
+   <%- include('./parcials/footer.ejs') %>
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./parcials/head.ejs') %>
+
+<body>
+  <%- include('./parcials/nav.ejs') %>
+
+<br>
+<br>
+  
+  <!-- Slideshow container -->
+<div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 3</div>
+    <img src="../dog1.jpg" style="width:40%">
+    <div class="text">Nicki</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src="../dog2.jpg" style="width:32%">
+    <div class="text">Cherry</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="../cat2.jpg" style="width:30%">
+    <div class="text">Leo & Nala</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">4 / 4</div>
+    <img src="../dog3.jpg" style="width:27%">
+    <div class="text">Boss</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">4 / 4</div>
+    <img src="../dog4.jpg" style="width:40%">
+    <div class="text">Anna</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">4 / 4</div>
+    <img src="../cat1.jpg" style="width:28%">
+    <div class="text">Hero</div>
+  </div>
+
+ 
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+  <span class="dot" onclick="currentSlide(5)"></span>
+  <span class="dot" onclick="currentSlide(6)"></span>
+
+</div>
+
+<br>
+
+<script>
+  let slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+  }
+  </script>
+    
+<div class="about content">
+  <h2>Welcome !</h2>
+  <p>
+  Woof Woof is a non - profit organization which establish only on the good heart of people believing that every soul needs a forever home.
+  <br><br>
+   The organiziation was established 10 years ago and it all started by finding one momma and her 8 sweet puppies.
+  <br><br>
+  Since that day our dream became reality due to hard work, endless volunteers and donations.
+  <br><br>
+  If you want to join our family, adopt one of our sweethearts or donate us,
+  <br><br>
+  please contact us !
+
+  </p>
+  <br><br><br>
+
+</div>
+
+
+
+   <%- include('./parcials/footer.ejs') %>
+
+</body>
+</html>
